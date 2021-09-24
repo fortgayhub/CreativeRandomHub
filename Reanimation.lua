@@ -16,13 +16,13 @@ local Reanimated = true
 -- R15 Check
 if Humanoid.RigType == Enum.HumanoidRigType.R15 then
     game.StarterGui:SetCore("SendNotification",{
-    Title = "Gelatek Reanimation",
+    Title = "Kom Reanimation",
     Text = "Reanimation supports only R6.",
     Duration = 10
 }) end
-if game.Players.LocalPlayer.Character:FindFirstChild("GelatekReanimation") or workspace:FindFirstChild("GelatekReanimation") then
+if game.Players.LocalPlayer.Character:FindFirstChild("KomReanimation") or workspace:FindFirstChild("KomReanimation") then
     game.StarterGui:SetCore("ChatMakeSystemMessage", {
-        Text = "[Gelatek Hub V2] You are already reanimated! Please reset to unreanimate.",
+        Text = "[Kom Hub V2] You are already reanimated! Please reset to unreanimate.",
         Color = Color3.fromRGB(255, 10, 70),
         TextSize = 18,
         Font = Enum.Font.Ubuntu
@@ -43,8 +43,8 @@ end)
 -- Start reanimation
 game:WaitForChild("Run Service").Heartbeat:Connect(function()
     if Reanimated == true then
-        if Character.GelatekReanimation then
-            Character.Torso.CFrame=Character.GelatekReanimation.Torso.CFrame
+        if Character.KomReanimation then
+            Character.Torso.CFrame=Character.KomReanimation.Torso.CFrame
         end
         sethiddenproperty(game.Players.LocalPlayer, "MaximumSimulationRadius", 1000)
         sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", 1000)
@@ -65,9 +65,9 @@ end)
 
 local CopyCharacter = Character:Clone()
 CopyCharacter.Parent = Character
-CopyCharacter.Name = "GelatekReanimation"
+CopyCharacter.Name = "KomReanimation"
 
-for k,l in pairs(Character.GelatekReanimation:GetDescendants()) do 
+for k,l in pairs(Character.KomReanimation:GetDescendants()) do 
     if l:IsA("Part") or l:IsA("Decal") then
     l.Transparency=1
 end
@@ -159,7 +159,7 @@ Character.Animate.Disabled = true
 game:GetService("UserInputService").JumpRequest:connect(function(t)
     if CopyCharacter.Humanoid.FloorMaterial~=Enum.Material.Air then 
         CopyCharacter.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
-        game.Players.LocalPlayer.Character.GelatekReanimation:FindFirstChildOfClass('Humanoid').Sit=false 
+        game.Players.LocalPlayer.Character.KomReanimation:FindFirstChildOfClass('Humanoid').Sit=false 
     end 
 end)
 
